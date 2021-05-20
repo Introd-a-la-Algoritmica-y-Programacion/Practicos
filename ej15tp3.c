@@ -15,7 +15,7 @@ void main(){
 	fgets(respuesta3,21,stdin);
 	puntaje = 0;
 	if ((strcmp(respuesta1, RespuestaCorrecta1))== 0){
-			puntaje = puntaje + 100;
+		puntaje = puntaje + 100;
 	}
 	if((strcmp(respuesta2,RespuestaCorrecta2))==0){
 		puntaje = puntaje + 100;
