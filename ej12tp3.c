@@ -10,14 +10,12 @@ void main() {
 	printf("Ingrese la longitud del lado 3: ");
 	scanf("%f",&lado3);
 	if (lado1 == lado2 && lado1 == lado3) {
-	strcpy(tipoTriangulo,"equilatero");
-	}
-	else {
+		strcpy(tipoTriangulo,"equilatero");
+	}else {
 		if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
-		strcpy(tipoTriangulo,"isosceles");
-		}
-		else {
-		strcpy(tipoTriangulo,"escaleno");
+			strcpy(tipoTriangulo,"isosceles");
+		}else {
+			strcpy(tipoTriangulo,"escaleno");
 		}
 	}
 	printf("El triangulo ingresado es %s \n", tipoTriangulo);
