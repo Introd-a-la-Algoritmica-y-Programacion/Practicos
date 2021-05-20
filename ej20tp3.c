@@ -8,23 +8,19 @@ void main(){
 	scanf("%d",&min);
 	printf("Ingrese los segundos: ");
 	scanf("%d",&seg);
-	if(hora == 23 && min == 59 && seg == 59){
-		hora = 0;
-		min = 0;
+	seg = seg + 1;
+	if(seg == 60){
 		seg = 0;
-	} else {
-		if(min == 59 && seg == 59){
-			hora = hora + 1;
-			min = 0;
-			seg = 0;
-		} else {
-			if(seg == 59){
-				min = min + 1;
-				seg = 0;
-			} else {
-				seg = seg + 1;
-			}
-		}
+		min = min + 1;
+	}
+
+	if(min == 60){
+		min = 0;
+		hora = hora + 1;
+	}
+
+	if(hora == 24){
+		hora = 0;
 	}
 	printf("La hora que marcara el reloj un segundo despues es %dh %dmin %dseg \n", hora, min, seg);
 }
