@@ -13,20 +13,20 @@ void main(){
 	d = (b * b - 4 * c);
 	if(a==0 && b==0){
 		strcpy(res,"La ecuacion es degenerada");
+	}else{
+		if(a==0 && b!=0){
+			strcpy(res,"La ecuacion tiene una unica raiz");
 		}else{
-			if(a==0 && b!=0){
-				strcpy(res,"La ecuacion tiene una unica raiz");
-				}else{
-					if(a!=0 && d>0){
-						strcpy(res,"La ecuacion tiene dos raices reales");
-						}else{
-							if(a!=0 && d==0){
-								strcpy(res,"La ecuacion tiene una unica raiz");
-							} else {
-								strcpy(res,"La ecuacion tiene dos raices complejas");
-							}
-						}
-					}
+			if(a!=0 && d>0){
+				strcpy(res,"La ecuacion tiene dos raices reales");
+			}else{
+				if(a!=0 && d==0){
+					strcpy(res,"La ecuacion tiene una unica raiz");
+				} else {
+					strcpy(res,"La ecuacion tiene dos raices complejas");
 				}
+			}
+		}
+	}
 	printf("%s\n",res);	
 	}
