@@ -9,17 +9,17 @@ void main(){
 	printf("Ingrese los segundos: ");
 	scanf("%d",&seg);
 	seg = seg + 1;
-	if(seg == 60){
+	if(seg > 59){
 		seg = 0;
 		min = min + 1;
 	}
 
-	if(min == 60){
+	if(min > 59){
 		min = 0;
 		hora = hora + 1;
 	}
 
-	if(hora == 24){
+	if(hora > 23){
 		hora = 0;
 	}
 	printf("La hora que marcara el reloj un segundo despues es %dh %dmin %dseg \n", hora, min, seg);
