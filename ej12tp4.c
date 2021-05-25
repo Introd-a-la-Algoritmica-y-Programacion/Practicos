@@ -5,7 +5,7 @@ int i, cantidadEstudiantes;
 float nota, sumatoriaNotas, promedio;
 char rendimientoAlumnos[21];
 int main() {
-	i = 0;
+	i = 1;
 	sumatoriaNotas = 0;
 	printf("Ingrese la cantidad de estudiantes que rindieron el examen: ");
 	scanf("%d",&cantidadEstudiantes);
@@ -19,7 +19,7 @@ int main() {
 		} while (nota < 0 || nota > 10);
 		sumatoriaNotas = sumatoriaNotas + nota;
 		i = i + 1;
-	} while (i < cantidadEstudiantes);
+	} while (i <= cantidadEstudiantes);
 	promedio = sumatoriaNotas/cantidadEstudiantes;
 	if(promedio > 8){
 		strcpy(rendimientoAlumnos,"elevado");
