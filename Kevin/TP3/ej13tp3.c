@@ -1,4 +1,5 @@
-#include <stdio.h> <string.h>
+#include <stdio.h> 
+#include <string.h>
 // Lexico //
 float tAnd1, tAnd2, tAnd3;
 char orden[21];
