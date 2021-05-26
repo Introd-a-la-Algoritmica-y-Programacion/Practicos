@@ -1,4 +1,5 @@
-#include <stdio.h> <string.h>
+#include <stdio.h> 
+#include <string.h>
 //Lexico //
 float lado1, lado2, lado3;
 char tipoTriangulo[21];
