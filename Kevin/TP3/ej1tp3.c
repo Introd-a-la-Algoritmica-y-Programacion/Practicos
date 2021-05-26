@@ -1,4 +1,4 @@
-#include <stdio.h>  //esNiña/o
+#include <stdio.h>  
 #include <string.h>
 /* Lexico*/
 int edad; // edad de la persona que quiere consultar
