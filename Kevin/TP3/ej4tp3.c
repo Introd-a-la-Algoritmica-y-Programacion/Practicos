@@ -1,4 +1,5 @@
-#include <stdio.h> //costoAlquilerAUto
+//costoAlquilerAuto
+#include <stdio.h> 
 /*Lexico*/
 float km, costo;
 float precioPorKm = 30;
