@@ -5,9 +5,9 @@ int i, n, existeAlgunDivisor;
 char res[21];
 int main() {
 	do {
-		printf("Ingrese un numero (positivo) que quiera saber si es primo o no\n");
+		printf("Ingrese un numero (mayor a 1) que quiera saber si es primo o no\n"); //por convencion el 1 no se considera numero primo
 		scanf("%d",&n);
-	} while (n <= 0);
+	} while (n <= 1);
 	existeAlgunDivisor = 0; //variable del tipo logico que me dice si existe algun divisor diferente de 1 y n, de un numero n
 	i = 2; //arranco con 2 porque todos los numeros son divisibles por 1
 	//pongo esta condicion en el while para que corte el ciclo ni bien aparezca un divisor distinto de 1
