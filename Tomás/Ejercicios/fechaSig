@@ -2,7 +2,7 @@
 #include <string.h>
 
 int aaaa, mm, dd, bisiesto;
-char mensajeI[71] = "El mes ingresado no puede tener la cantidad de dias que ha colocado.\n";
+char mensajeI[71] = "El mes ingresado no puede tener la cantidad de dias que ha colocado.\n\n";
 
 int main(){
 	printf("Si el anio es bisiesto coloque ¨1¨ y ¨0¨ si no es bisiesto. \n");
@@ -12,16 +12,16 @@ int main(){
 	printf("Ingrese el mes vigente: \n");
 	scanf("%d",&mm);
 	if(mm < 0 || mm > 12){
-		printf("El mes colocado es incorrecto.\n");
-		return 0;
+		printf("El mes colocado es incorrecto.\n\n");
+		return main();
 	}
 
 	printf("Ingrese el dia vigente: \n");
 	scanf("%d",&dd);
 
 	if(bisiesto == 0 && dd == 29){
-	printf("El anio no es bisiesto, por lo que febrero no puede tener 29 dias.\n");
-	return 0;
+	printf("El anio no es bisiesto, por lo que febrero no puede tener 29 dias.\n\n");
+	return main();
 }
 
 	if((dd == 31) && (mm == 1 || mm == 3 || mm == 5 || mm == 7 || mm == 8 || mm == 10 || mm == 12)){
@@ -34,7 +34,7 @@ int main(){
 		}else{
 			if((dd < 1 || dd > 31) && (mm == 1 || mm == 3 || mm == 5 || mm == 7 || mm == 8 || mm == 10 || mm == 12)){
 				printf("%s", mensajeI);
-				return 0;
+				return main();
 			}
 		}
 	}
@@ -49,7 +49,7 @@ int main(){
 		}else{
 			if((dd < 1 || dd > 30) && (mm == 4 || mm == 6 || mm == 9 || mm == 11)){
 				printf("%s", mensajeI);
-				return 0;
+				return main();
 			}
 		}
 	}
@@ -64,7 +64,7 @@ int main(){
 		}else{
 			if((dd < 1 || dd > 29) && (mm == 2 && bisiesto == 1)){
 				printf("%s", mensajeI);
-				return 0;
+				return main();
 			}
 		}
 	}
