@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+
+char contrasenia[40], contrasenia1[40];
+int falso;
+
+int main(){
+	printf("Ingrese la nueva contraseña:\n");
+	fgets(contrasenia,40,stdin);
+
+	printf("Repita su contrasenia.\n");
+	fgets(contrasenia1,40,stdin);
+
+	if(strcmp(contrasenia, contrasenia1) == 0){
+		printf("Las contrasenias coinciden.\n");
+		return 0;
+	}
+
+	if(strcmp(contrasenia, contrasenia1) != 0){
+		printf("Las contrasenias no coinciden intentelo nuevamente.\n\n");
+		return main();
+	}
+}
