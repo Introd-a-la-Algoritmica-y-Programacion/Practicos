@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+int a, b, n;
+
+int main(){
+	printf("Ingrese el numero hasta el que se desea sumar:\n");
+	scanf("%d",&n);
+
+	a = 0;
+	b = 1;
+
+	do{
+		a = a + b;
+		b = b + 1;
+	}while(b <= n);
+	printf("El resultado de la sumatoria hasta %d es: %d.\n",n ,a);
+	return 0;
+}
