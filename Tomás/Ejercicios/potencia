@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <math.h>
+
+int a, y, resultado;
+
+int main(){
+	printf("\nColoque la base del exponente: \n");
+	scanf("%d",&a);
+	printf("Coloque el exponente: \n");
+	scanf("%d",&y);
+
+	resultado = pow(a, y);
+
+	printf("\nEl resultado es: %d.\n", resultado);
+}
