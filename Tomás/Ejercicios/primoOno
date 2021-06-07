@@ -1,10 +1,8 @@
 #include <stdio.h>
 
-int n, i, conclusion;
+int n, i;
 
 int main(){
-
-	conclusion = 0;
 
 	printf("Ingrese el numero del que desee conocer si es primo o no:\n");
 	scanf("%d",&n);
