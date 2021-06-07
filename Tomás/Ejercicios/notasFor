@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int i, n;
+float a, nota, notas, promedio;
+
+int main(){
+
+	printf("\nIngrese la cantidad de examenes: ");
+	scanf("%d",&n);
+
+	a = 0;
+
+	for(i = 1; i <= n; i++){
+		printf("\nIngrese la nota %d de %d: ", i, n);
+		scanf("%f",&nota);
+		notas = a + nota;
+		a = notas;
+		promedio = notas / n;
+	}
+
+	if(promedio > 8){
+		printf("\nRendimiento elevado.\n");
+	}else{
+		if(promedio >= 6 && promedio <= 8){
+			printf("\nRendimiento aceptable.\n");
+		}else{
+			if(promedio < 6){
+				printf("\nRendimiento bajo.\n");
+			}
+		}
+	}
+	printf("\n");
+	return 0;
+}
