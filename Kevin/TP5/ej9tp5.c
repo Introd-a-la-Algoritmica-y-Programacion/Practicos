@@ -14,7 +14,11 @@ int main() {
 	printf("Ingrese el valor del coeficiente y del punto: \n");
 	scanf("%f", &q);
 	perteneceRecta = estaEnLaRecta(a,b,p,q);
-	printf("La funcion perteneceRecta toma el valor logico de %d\n", perteneceRecta);
+	if(perteneceRecta == 1){
+		printf("El punto pertenece a la recta\n");
+	}else{
+		printf("El punto NO pertenece a la recta\n");
+	}
 	return 0;
 }
 //fin del main//
