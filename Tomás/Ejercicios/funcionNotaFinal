@@ -1,0 +1,37 @@
+#include <stdio.h>
+
+float nota1, nota2, nota3, promedio;
+int notaFinal(float promedio);
+
+int main()
+{
+	printf("\nIngrese la nota 1 de 3: ");
+	scanf("%f",&nota1);
+	printf("\nIngrese la nota 2 de 3: ");
+	scanf("%f",&nota2);
+	printf("\nIngrese la nota 3 de 3: ");
+	scanf("%f",&nota3);
+	notaFinal(promedio);
+}
+
+int notaFinal(float promedio)
+{
+	if(nota1 < 4 || nota2 < 4 || nota3 < 4)
+	{
+		promedio = 2;
+	}else{
+		promedio = (nota1 + nota2 + nota3) / 3;
+	}
+	if(promedio < 5)
+	{
+		printf("\nEl alumno alcanza la condicion de ¨Libre¨.\n\n");
+	}else{
+		if(promedio >= 5 && promedio < 7)
+		{
+			printf("\nEl alumno alcanza la condicion de ¨Regular¨.\n\n");
+		}else{
+			printf("\nEl alumno alcanza la condicion de ¨Promocion¨\n\n");
+		}
+	}
+	return 0;
+}
