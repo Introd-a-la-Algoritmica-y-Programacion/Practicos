@@ -1,0 +1,117 @@
+#include <stdio.h>
+
+int i, extra, dia, dias,diasTotal, mes, anio, anios, f1anio, f2anio, fecha1, fecha2;
+int diasXmes;
+int diasMes(int mes);
+int bisiesto(int anio);
+
+int main()
+{
+	printf("\nIngrese la primer fecha con el formato ¨dia mes anio¨: ");
+	scanf("%d%d%d",&dia, &mes, &anio);
+	diasMes(mes);
+	bisiesto(anio);
+	fecha1 = dia + diasXmes + extra;
+	f1anio = anio;
+
+	printf("\nIngrese la segunda fecha con el formato ¨dia mes anio¨: ");
+	scanf("%d%d%d",&dia, &mes, &anio);
+	diasMes(mes);
+	bisiesto(anio);
+	fecha2 = dia + diasXmes + extra;
+	f2anio = anio;
+
+	if(f1anio < f2anio)
+	{
+		anios = f2anio - f1anio;
+	}else{
+		anios = f1anio - f2anio;
+	}
+
+	if(fecha1 < fecha2)
+	{
+		dias = fecha2 - fecha1;
+	}else{
+		dias = fecha1 - fecha2;
+	}
+
+	diasTotal = dias + anios * 365;
+
+	printf("\nTotal de dias transcurridos: %d\n",diasTotal);
+}
+
+int bisiesto(int anio)
+{
+	extra = 0;
+	i = 1900;
+	for(i = 1900; i <= anio; i++)
+	{
+		if(i % 4 == 0)
+		{
+			extra++;
+		}
+	}
+}
+
+int diasMes(int mes)
+{
+	if(mes == 1)
+	{
+		diasXmes = 31;
+	}else{
+		if(mes == 2)
+		{
+			diasXmes = 59;
+		}else{
+			if(mes == 3)
+			{
+				diasXmes = 90;
+			}else{
+				if(mes == 4)
+				{
+					diasXmes = 120;
+				}else{
+					if(mes == 5)
+					{
+						diasXmes = 151;
+					}else{
+						if(mes == 6)
+						{
+							diasXmes = 181;
+						}else{
+							if(mes == 7)
+							{
+								diasXmes = 212;
+							}else{
+								if(mes == 8)
+								{
+									diasXmes = 243;
+								}else{
+									if(mes == 9)
+									{
+										diasXmes = 273;
+									}else{
+										if(mes == 10)
+										{
+											diasXmes = 304;
+											}else{
+											if(mes == 11)
+											{
+												diasXmes = 334;
+											}else{
+												if(mes == 12)
+												{
+													diasXmes = 365;
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
