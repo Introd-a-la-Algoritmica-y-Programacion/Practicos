@@ -16,7 +16,7 @@ int descuento(int antiguedad)
 	if(antiguedad > 5)
 	{
 		pagar = 1000 * 0.92;
-		printf("\nSu cuota ha sido reducida un ¨8 por ciento¨ debido a su antiguedad, el monto a pagar es de: %.2f\n\n",pagar);
+		printf("\nSu cuota de 1000 ha sido reducida un ¨8 por ciento¨ debido a su antiguedad, el monto a pagar es de: %.2f\n\n",pagar);
 	}else{
 		pagar = 1000;
 		printf("\nSu cuota es de: %.2f\n\n",pagar);	
