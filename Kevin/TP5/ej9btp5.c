@@ -6,7 +6,7 @@ struct Tpunto {
 	float x;
 	float y;
 }punto;
-int estaEnLaRecta(float a,float b, struct punto); //la uso como una variable de tipo logico
+int estaEnLaRecta(float a,float b, struct Tpunto punto); //la uso como una variable de tipo logico
 int perteneceRecta; //variable auxiliar que almacena los valores de estaEnLaRecta
 int main() {
 	printf("Ingrese el valor del coeficiente a: \n");
@@ -28,9 +28,9 @@ int main() {
 //fin del main//
 //implementacion de la funcion estaEnLaRecta//
 
-int estaEnLaRecta(float a,float b,struct punto){
+int estaEnLaRecta(float a,float b,struct Tpunto p){
 int aux;
-	if(punto.y - a*punto.x - b == 0){
+	if(p.y - a*p.x - b == 0){
 		aux = 1;
 	}else{
 		aux = 0;
