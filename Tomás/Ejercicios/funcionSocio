@@ -1,25 +1,32 @@
 #include <stdio.h>
 
-int antiguedad;
+int antiguedad, aux;
 float pagar;
 int descuento(int antiguedad);
 
 int main()
 {
+	printf("\nIngrese la antiguedad: ");
+	scanf("%d",&antiguedad);
 	descuento(antiguedad);
+	if(aux == 1)
+	{
+		pagar = 1000 * 0.92;
+		printf("\nSu cuota de 1000 ha sido reducida un ¨8 por ciento¨ debido a su antiguedad de %d, el monto a pagar es de: %.2f\n\n",antiguedad, pagar);
+	}else{
+		pagar = 1000;
+		printf("\nSu cuota es de: %.2f la cual no aplica para el descuento debido a que su antiguedad de %d no supera los 5 anios.\n\n",pagar, antiguedad);
+	}
+	return 0;
 }
 
 int descuento(int antiguedad)
 {
-	printf("\nIngrese la antiguedad: ");
-	scanf("%d",&antiguedad);
 	if(antiguedad > 5)
 	{
-		pagar = 1000 * 0.92;
-		printf("\nSu cuota de 1000 ha sido reducida un ¨8 por ciento¨ debido a su antiguedad, el monto a pagar es de: %.2f\n\n",pagar);
+		aux = 1;
 	}else{
-		pagar = 1000;
-		printf("\nSu cuota es de: %.2f\n\n",pagar);	
+		aux = 2;
 	}
 	return 0;
 }
