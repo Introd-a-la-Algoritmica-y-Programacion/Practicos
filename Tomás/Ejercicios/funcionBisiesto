@@ -5,7 +5,7 @@ int bisiesto(int anio);
 
 int main()
 {
-	printf("\nIngrese un anio para saber si es bisiesto o no: \n");
+	printf("\nIngrese un anio para saber si es bisiesto o no: ");
 	scanf("%d",&anio);
 	bisiesto(anio);
 }
@@ -14,9 +14,9 @@ int bisiesto(int anio)
 {
 	if(anio % 4 == 0)
 	{
-		printf("El anio es bisiesto.\n");
+		printf("\nEl anio es bisiesto.\n\n");
 	}else{
-		printf("El anio no es bisiesto.\n");
+		printf("\nEl anio no es bisiesto.\n\n");
 	}
 	return 0;
 }
