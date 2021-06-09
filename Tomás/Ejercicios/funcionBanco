@@ -46,7 +46,7 @@ int bisiesto(int anio)
 	i = 1900;
 	for(i = 1900; i <= anio; i++)
 	{
-		if(i % 4 == 0)
+		if((i % 4 == 0 && i % 100 != 0) || (i % 100 == 0 && i % 400 == 0))
 		{
 			extra++;
 		}
