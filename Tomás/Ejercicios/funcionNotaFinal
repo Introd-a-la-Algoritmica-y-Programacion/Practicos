@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-float nota1, nota2, nota3, promedio;
-int notaFinal(float promedio);
+float nota1, nota2, nota3, promedio, promedio1;
+int notaFinal(float nota1, float nota2, float nota3);
 
 int main()
 {
@@ -11,17 +11,8 @@ int main()
 	scanf("%f",&nota2);
 	printf("\nIngrese la nota 3 de 3: ");
 	scanf("%f",&nota3);
-	notaFinal(promedio);
-}
+	notaFinal(nota1, nota2, nota3);
 
-int notaFinal(float promedio)
-{
-	if(nota1 < 4 || nota2 < 4 || nota3 < 4)
-	{
-		promedio = 2;
-	}else{
-		promedio = (nota1 + nota2 + nota3) / 3;
-	}
 	if(promedio < 5)
 	{
 		printf("\nEl alumno alcanza la condicion de ¨Libre¨.\n\n");
@@ -32,6 +23,16 @@ int notaFinal(float promedio)
 		}else{
 			printf("\nEl alumno alcanza la condicion de ¨Promocion¨\n\n");
 		}
+	}
+}
+
+int notaFinal(float nota1, float nota2, float nota3)
+{
+	if(nota1 < 4 || nota2 < 4 || nota3 < 4)
+	{
+		promedio = 2;
+	}else{
+		promedio = (nota1 + nota2 + nota3) / 3;
 	}
 	return 0;
 }
