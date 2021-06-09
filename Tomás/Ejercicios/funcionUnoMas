@@ -6,14 +6,14 @@ int Inc(int num);
 
 int main()
 {
+	printf("\nIngrese un numero: ");
+	scanf("%d",&num);
 	Inc(num);
+	printf("\nSu numero incrementado una unidad es: %d\n\n", res);
 }
 
 int Inc(int num)
 {
-	printf("\nIngrese un numero: ");
-	scanf("%d",&num);
 	res = num + 1;
-	printf("\nSu numero incrementado una unidad es: %d\n", res);
 	return 0;
 }
