@@ -55,53 +55,59 @@ int bisiesto(int anio)
 
 int diasMes(int mes)
 {
-	if(mes == 1)
+	mes = mes - 1;
+	if(mes == 0)
 	{
-		diasXmes = 31;
-	}else{
-		if(mes == 2)
+		diasXmes = 0;
+	} else{
+		if(mes == 1)
 		{
-			diasXmes = 59;
+			diasXmes = 31;
 		}else{
-			if(mes == 3)
+			if(mes == 2)
 			{
-				diasXmes = 90;
+				diasXmes = 59;
 			}else{
-				if(mes == 4)
+				if(mes == 3)
 				{
-					diasXmes = 120;
+					diasXmes = 90;
 				}else{
-					if(mes == 5)
+					if(mes == 4)
 					{
-						diasXmes = 151;
+						diasXmes = 120;
 					}else{
-						if(mes == 6)
+						if(mes == 5)
 						{
-							diasXmes = 181;
+							diasXmes = 151;
 						}else{
-							if(mes == 7)
+							if(mes == 6)
 							{
-								diasXmes = 212;
+								diasXmes = 181;
 							}else{
-								if(mes == 8)
+								if(mes == 7)
 								{
-									diasXmes = 243;
+									diasXmes = 212;
 								}else{
-									if(mes == 9)
+									if(mes == 8)
 									{
-										diasXmes = 273;
+										diasXmes = 243;
 									}else{
-										if(mes == 10)
+										if(mes == 9)
 										{
-											diasXmes = 304;
-											}else{
-											if(mes == 11)
+											diasXmes = 273;
+										}else{
+											if(mes == 10)
 											{
-												diasXmes = 334;
-											}else{
-												if(mes == 12)
+												diasXmes = 304;
+												}else{
+												if(mes == 11)
 												{
-													diasXmes = 365;
+													diasXmes = 334;
+												}else{
+													if(mes == 12)
+													{
+														diasXmes = 365;
+													}
 												}
 											}
 										}
