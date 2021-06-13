@@ -148,11 +148,13 @@ int diasPorAniosBisiesto(int m, int a){
 int aux;
 int i;
 	aux = 0;
+	//el ciclo lo hago hasta el anio anterior//
 	for(i = 1900; i < a; i++){
 		if(anioBisiesto(i) == 1){
 			aux = aux + 1;
 		}
 	}
+	//para evaluar el anio de la fecha chequeo ademas que el dia sea despues de febrero//
 	if (anioBisiesto(a) == 1){
 		if(m > 2){
 			aux = aux + 1;
