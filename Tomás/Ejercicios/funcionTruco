@@ -36,7 +36,7 @@ int menu(struct carta c1, struct carta c2, struct carta c3){
 	do{
 		printf("Ingrese el numero de la segunda carta: ");
 		scanf("%d",&carta2.numero);
-	}while(carta2.numero < 1 || carta2.numero > 12 || carta2.numero == 8 || carta2.numero == 9);
+	}while(carta2.numero < 1 || carta2.numero > 12 || carta2.numero == 8 || carta2.numero == 9 || ((strcmp(carta1.palo,carta2.palo) == 0) && carta1.numero == carta2.numero));
 
 	while(getchar() != '\n');
 
@@ -47,7 +47,7 @@ int menu(struct carta c1, struct carta c2, struct carta c3){
 	do{
 		printf("Ingrese el numero de la tercer carta: ");
 		scanf("%d",&carta3.numero);
-	}while(carta3.numero < 1 || carta3.numero > 12 || carta3.numero == 8 || carta3.numero == 9);
+	}while(carta3.numero < 1 || carta3.numero > 12 || carta3.numero == 8 || carta3.numero == 9 || (((strcmp(carta2.palo,carta3.palo) == 0) && carta2.numero == carta3.numero) || ((strcmp(carta1.palo,carta3.palo) == 0) && carta1.numero == carta3.numero)));
 }
 
 int envido(struct carta c1, struct carta c2, struct carta c3){
