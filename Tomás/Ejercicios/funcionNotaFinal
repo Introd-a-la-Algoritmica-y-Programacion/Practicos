@@ -50,3 +50,5 @@ int notaFinal(struct nota n1, struct nota n2, struct nota n3)
 	}else{
 		promedio = (nota1.puntaje + nota2.puntaje + nota3.puntaje) / 3;
 	}
+	return promedio;
+}
