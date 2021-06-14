@@ -1,0 +1,131 @@
+#include <stdio.h>
+#include <string.h>
+
+struct carta{
+	int numero;
+	char palo[24];
+}carta1, carta2, carta3;
+
+int total;
+int menu(struct carta c1, struct carta c2, struct carta c3);
+int envido(struct carta c1, struct carta c2, struct carta c3);
+
+int main(){
+
+	menu(carta1, carta2, carta3);
+	envido(carta1, carta2, carta3);
+	printf("\nTotal de puntos = %d\n\n",total);
+}
+
+int menu(struct carta c1, struct carta c2, struct carta c3){
+	do{
+	printf("\nIngrese el palo de la primer carta: ");
+	fgets(carta1.palo,8,stdin);
+	}while(((strcmp(carta1.palo,"espada\n") != 0) && (strcmp(carta1.palo,"copa\n") != 0) && (strcmp(carta1.palo,"basto\n") != 0) && (strcmp(carta1.palo,"oro\n") != 0)));
+	do{
+		printf("Ingrese el numero de la primer carta: ");
+		scanf("%d",&carta1.numero);
+	}while(carta1.numero < 1 || carta1.numero > 12 || carta1.numero == 8 || carta1.numero == 9);
+
+	while(getchar() != '\n');
+
+	do{
+	printf("\nIngrese el palo de la segunda carta: ");
+	fgets(carta2.palo,8,stdin);
+	}while(((strcmp(carta2.palo,"espada\n") != 0) && (strcmp(carta2.palo,"copa\n") != 0) && (strcmp(carta2.palo,"basto\n") != 0) && (strcmp(carta2.palo,"oro\n") != 0)));
+	do{
+		printf("Ingrese el numero de la segunda carta: ");
+		scanf("%d",&carta2.numero);
+	}while(carta2.numero < 1 || carta2.numero > 12 || carta2.numero == 8 || carta2.numero == 9);
+
+	while(getchar() != '\n');
+
+	do{
+	printf("\nIngrese el palo de la tercer carta: ");
+	fgets(carta3.palo,8,stdin);
+	}while(((strcmp(carta3.palo,"espada\n") != 0) && (strcmp(carta3.palo,"copa\n") != 0) && (strcmp(carta3.palo,"basto\n") != 0) && (strcmp(carta3.palo,"oro\n") != 0)));
+	do{
+		printf("Ingrese el numero de la tercer carta: ");
+		scanf("%d",&carta3.numero);
+	}while(carta3.numero < 1 || carta3.numero > 12 || carta3.numero == 8 || carta3.numero == 9);
+}
+
+int envido(struct carta c1, struct carta c2, struct carta c3){
+	int puntos, total1 = 0, total2 = 0, total3 = 0;
+
+	if(strcmp(carta1.palo,carta2.palo) == 0){
+		puntos = 20;
+		if(carta1.numero <= 7 && carta2.numero > 7){
+			total1 = puntos + carta1.numero;
+		}else{
+			if(carta2.numero <= 7 && carta1.numero > 7){
+				total1 = puntos + carta2.numero;
+			}else{
+				if(carta1.numero <= 7 && carta2.numero <= 7){
+					total1 = puntos + carta1.numero + carta2.numero;
+				}else{
+					total1 = puntos;
+				}
+			}
+		}
+	}
+
+	if(strcmp(carta1.palo,carta3.palo) == 0){
+		puntos = 20;
+		if(carta1.numero <= 7 && carta3.numero > 7){
+			total2 = puntos + carta1.numero;
+		}else{
+			if(carta3.numero <= 7 && carta1.numero > 7){
+				total2 = puntos + carta3.numero;
+			}else{
+				if(carta1.numero <= 7 && carta3.numero <= 7){
+					total2 = puntos + carta1.numero + carta3.numero;
+				}else{
+					total2 = puntos;
+				}
+			}
+		}
+	}
+
+	if(strcmp(carta2.palo,carta3.palo) == 0){
+		puntos = 20;
+		if(carta2.numero <= 7 && carta3.numero > 7){
+			total3 = puntos + carta2.numero;
+		}else{
+			if(carta3.numero <= 7 && carta2.numero > 7){
+				total3 = puntos + carta3.numero;
+			}else{
+				if(carta2.numero <= 7 && carta3.numero <= 7){
+					total3 = puntos + carta2.numero + carta3.numero;
+				}else{
+					total3 = puntos;
+				}
+			}
+		}
+	}
+
+	if(total1 >= total2){
+		total = total1;
+	}else{
+		if(total2 >= total3){
+			total = total2;
+		}else{
+			total = total3;
+		}
+	}
+
+	if((strcmp(carta1.palo,carta2.palo) != 0) && (strcmp(carta1.palo,carta3.palo) != 0) && (strcmp(carta2.palo,carta3.palo) != 0)){
+		total = 0;
+		if(carta1.numero > carta2.numero){
+			total = carta1.numero;
+		}else{
+			if(carta2.numero > carta3.numero){
+				total = carta2.numero;
+			}else{
+				if(carta3.numero > carta2.numero){
+					total = carta3.numero;
+				}
+			}
+		}
+	}
+}
