@@ -1,16 +1,33 @@
 #include <stdio.h>
+#include <string.h>
 
-float nota1, nota2, nota3, promedio, promedio1;
-int notaFinal(float nota1, float nota2, float nota3);
+struct nota{
+	float puntaje;
+}nota1, nota2, nota3;
+
+int promedio;
+int notaFinal(struct nota n1, struct nota n2, struct nota n3);
 
 int main()
 {
-	printf("\nIngrese la nota 1 de 3: ");
-	scanf("%f",&nota1);
-	printf("\nIngrese la nota 2 de 3: ");
-	scanf("%f",&nota2);
-	printf("\nIngrese la nota 3 de 3: ");
-	scanf("%f",&nota3);
+	printf("\n");
+	do{
+	printf("Ingrese la nota 1 de 3: ");
+	scanf("%f",&nota1.puntaje);
+	}while(nota1.puntaje < 1 || nota1.puntaje > 10);
+
+	printf("\n");
+	do{
+	printf("Ingrese la nota 2 de 3: ");
+	scanf("%f",&nota2.puntaje);
+	}while(nota2.puntaje < 1 || nota2.puntaje > 10);
+
+	printf("\n");
+	do{
+	printf("Ingrese la nota 3 de 3: ");
+	scanf("%f",&nota3.puntaje);
+	}while(nota3.puntaje < 1 || nota3.puntaje > 10);
+
 	notaFinal(nota1, nota2, nota3);
 
 	if(promedio < 5)
@@ -26,13 +43,12 @@ int main()
 	}
 }
 
-int notaFinal(float nota1, float nota2, float nota3)
+int notaFinal(struct nota n1, struct nota n2, struct nota n3)
 {
-	if(nota1 < 4 || nota2 < 4 || nota3 < 4)
+	if(nota1.puntaje < 4 || nota2.puntaje < 4 || nota3.puntaje < 4)
 	{
 		promedio = 2;
 	}else{
-		promedio = (nota1 + nota2 + nota3) / 3;
+		promedio = (nota1.puntaje + nota2.puntaje + nota3.puntaje) / 3;
 	}
-	return 0;
 }
