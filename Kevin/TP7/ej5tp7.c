@@ -26,10 +26,10 @@ void cargarNotas(TData *notas){
 	int i; //variable de control del para
 	printf("Ingrese la cantidad de notas que seran cargadas: ");
 	do{
-	scanf("%d", &notas->cant);
-	if ((*notas).cant < 0 || (*notas).cant > Max){
-		printf("Ingrese una cantidad de notas valida (0 a 200): ");
-	}
+		scanf("%d", &notas->cant);
+		if ((*notas).cant < 0 || (*notas).cant > Max){
+			printf("Ingrese una cantidad de notas valida (0 a 200): ");
+		}
 	}while((*notas).cant < 0 || (*notas).cant > Max);
 	if((*notas).cant > 0){
 		printf("Ingrese las %d notas: ", notas->cant);
