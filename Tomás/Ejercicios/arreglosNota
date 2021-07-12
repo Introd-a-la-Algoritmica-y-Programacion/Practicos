@@ -1,0 +1,72 @@
+#include <stdio.h>
+
+float promedio(int *nota, int sizeA);
+int aproYdesa(int *nota, int sizeA);
+
+int main(){
+
+    int sizeA;
+
+    printf("\nIntroduzca la cantidad de alumnos: ");
+    scanf("%i", &sizeA);
+    printf("\n");
+
+    int nota[sizeA], i;
+    
+    for(i=0;i<sizeA;i++){
+
+        printf("Introduzca la '%i' nota: ", i+1);
+        scanf("%i", &nota[i]);
+    }
+
+    float prom;
+
+    prom = promedio(nota, sizeA);
+
+    int desaprobados, aprobados;
+
+    desaprobados = aproYdesa(nota, sizeA);
+
+    aprobados = sizeA - desaprobados;
+
+    float papro, pdesa;
+
+    papro = aprobados * 10;
+    pdesa = desaprobados * 10;
+
+    printf("\nLa cantidad de aprobados es de: '%i' y el porcentaje es: '%.2f'.\n", aprobados, papro);
+    printf("\nLa cantidad de desaprobados es de: '%i' y el porcentaje es: '%.2f'.\n", desaprobados, pdesa);
+    printf("\nEl promedio de notas es de: '%.2f'.\n", prom);
+
+    return 0;
+}
+
+float promedio(int *nota, int sizeA){
+
+    int i, total, totalAux;
+    float prom;
+    totalAux = 0;
+
+    for(i=0;i<sizeA;i++){
+        total = totalAux + nota[i];
+        totalAux = total;
+    }
+
+    prom = total / sizeA;
+
+    return prom;
+}
+
+int aproYdesa(int *nota, int sizeA){
+
+    int i, desaprobados;
+    desaprobados = 0;
+
+    for(i=0;i<sizeA;i++){
+        if(nota[i] < 5){
+            desaprobados += 1;
+        }
+    }
+
+    return desaprobados;
+}
