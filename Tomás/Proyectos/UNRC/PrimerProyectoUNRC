@@ -1,1 +1,243 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
 
+#define NMax 3
+
+
+struct personas
+{
+    char nombre[30];
+    int cantidad;
+}persona[NMax];
+
+
+int validarI(int a);
+int validarC(char *a);
+
+int Llena(struct personas personas);
+int Vacia(struct personas personas);
+
+
+void cargarSize(struct personas *personas);
+void cargarElementos(struct personas *personas);
+
+void agregar(struct personas *personas, char *nuevoElemento);
+void eliminar(struct personas *personas);
+void mostrar(struct personas personas);
+
+void menu();
+
+
+
+int main()
+{
+    struct personas persona;
+ 
+    cargarSize(&persona);
+    cargarElementos(&persona);
+
+    menu();
+
+    return 0;
+}
+
+
+
+void menu(){
+
+    int opcion, esValido, esVacia, esLlena;
+    char nuevoElemento[30];
+
+    do{
+        printf("*--------------------------------------------------------------*\n");
+        printf("| Presione '1' para agregar un elemento al final del registro. |\n");
+        printf("| Presione '2' para eliminar el primer elemento del registro.  |\n");
+        printf("| Presione '3' para mostrar el registro.                       |\n");
+        printf("| Presione '4' para saber si el registro esta vacio.           |\n");
+        printf("| Presione '5' para saber si el registro esta lleno.           |\n");
+        printf("| Presione '6' para salir.                                     |\n");
+        printf("*--------------------------------------------------------------*\n");
+        printf("Opcion: ");
+        scanf("%i", &opcion);
+        while(getchar()!='\n');
+
+        switch(opcion){
+            case 1: 
+                    if(Llena(*persona)==2)
+                    {
+                        do{
+                            printf("\nNombre para el nuevo elemento: ");
+                            fgets(nuevoElemento,30,stdin);
+                            strtok(nuevoElemento, "\n");
+                            printf("\n");
+
+                            esValido = validarC(nuevoElemento);
+
+                            if(esValido>30){
+                                printf("\n          ERROR\n\n");
+                            }
+                        }while(esValido>30);
+                        agregar(persona, nuevoElemento);   
+                    }else{
+                        printf("\nEl registro está lleno.\n\n");
+                    }
+            break; 
+
+            case 2: 
+                    eliminar(persona);
+            break;
+
+            case 3: 
+                    mostrar(*persona);
+            break;
+
+            case 4: 
+                    esVacia = Vacia(*persona);
+                    if(esVacia == 1)
+                    {
+                        printf("\nVerdadero, no hay elementos en el registro.\n\n");
+                    }else{
+                        printf("\nFalso, hay elementos en el registro.\n\n");
+                    }
+            break;
+
+            case 5: 
+                    esLlena = Llena(*persona);
+                    if(esLlena == 1)
+                    {
+                        printf("\nVerdadero, el registro está lleno.\n\n");
+                    }else{
+                        printf("\nFalso, el registro no está lleno.\n\n");
+                    }
+            break;
+
+            case 6:
+            break;
+        }
+    }while(opcion!=6);
+}
+
+void cargarSize(struct personas *personas)
+{
+    int esValido=0;
+
+    do{
+        printf("\nIngrese la cantidad de elementos para el registro: ");
+        scanf("%i", &persona->cantidad);
+
+        while(getchar()!='\n');
+
+        esValido = validarI(persona->cantidad);
+
+        if(persona->cantidad<0 || persona->cantidad>NMax || esValido != 0);
+
+    }while(persona->cantidad<0 || persona->cantidad>NMax);
+}
+
+void cargarElementos(struct personas *personas)
+{
+
+    int esValido;
+
+    for(int i=0;i<persona->cantidad;i++){
+        do{
+        printf("Nombre para el '%i' elemento: ", i+1);
+        fgets(persona[i].nombre,30,stdin);
+        strtok(persona[i].nombre, "\n");
+
+        esValido = validarC(persona[i].nombre);
+
+        if(esValido>30){
+            printf("\n          ERROR\n\n");
+        }
+
+        }while(esValido>30);
+    }
+
+    printf("\n");
+}
+
+void agregar(struct personas *personas, char *nuevoElemento){
+
+    if(persona->cantidad<NMax)
+    {
+        persona->cantidad += 1;
+        
+        strcpy(persona[persona->cantidad-1].nombre, nuevoElemento);
+    }
+ }
+
+ void eliminar(struct personas *personas){
+
+    if(persona->cantidad>=1)
+    {
+        printf("\nNombre eliminado: %s\n", persona[persona->cantidad-1].nombre);
+
+        for(int i=0;i<persona->cantidad;i++){
+            strcpy(persona[i].nombre, persona[i+1].nombre);
+        }
+        
+        persona->cantidad = persona->cantidad - 1;
+
+        printf("\nAhora hay '%i' elementos en el registro.\n\n", persona->cantidad);
+    }else{
+        printf("\nNo hay elementos para eliminar.\n\n");
+    }
+ }
+
+void mostrar(struct personas personas){
+    
+    if(persona->cantidad>=1)
+    {
+        printf("\n");
+        for(int i=0;i<persona->cantidad;i++){
+            printf("Nombre del '%i' elemento del registro: %s", i+1, persona[i].nombre);
+            printf("\n");
+        }
+    }
+    printf("\nCantidad de elementos en el registro: %i\n\n", persona->cantidad);
+}
+
+
+int validarI(int a)
+{
+    int aux=0;
+
+    if(isdigit(a) == 0){
+        aux += 1;
+    }
+
+    return aux;
+}
+
+int validarC(char *a)
+{
+    int aux=0;
+
+    if(isdigit(*a) == 0){
+        aux += 1;
+    }else{
+        aux = 31;
+    }
+
+    return aux;
+}
+
+int Vacia(struct personas personas){
+    if(persona->cantidad<=0)
+    {
+        return 1;
+    }else{
+        return 2;
+    }
+}
+
+int Llena(struct personas personas){
+    if(persona->cantidad>=NMax)
+    {
+        return 1;
+    }else{
+        return 2;
+    }
+}
